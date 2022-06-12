@@ -1,0 +1,6 @@
+Black
+human
+b
+White
+computer
+w
