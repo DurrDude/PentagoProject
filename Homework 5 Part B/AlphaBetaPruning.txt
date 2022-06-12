@@ -1,0 +1,384 @@
+Output without Alpha-Beta Pruning (Monte Carlo Search commented out since that
+is not important):
+
+-----------------------------------------------------------------
+Depth 2:
+Reading setup from default.txt:
+Player Black: type=human, plays Black tokens
+Player White: type=computer, plays White tokens
+
++-------+-------+
+| . . . | . . . |
+| . . . | . . . |
+| . . . | . . . |
++-------+-------+
+| . . . | . . . |
+| . . . | . . . |
+| . . . | . . . |
++-------+-------+
+
+Input your move, Black (block/position block-to-rotate direction): 1/9 3L
+Nodes Visited: 0
+Black's move: 1/9 3L
+Placing b in cell [2][2], and rotating Block 3 Left
+Black (b)'s heuristic: 2
+White (w)'s heuristic: -2
++-------+-------+
+| . . . | . . . |
+| . . . | . . . |
+| . . b | . . . |
++-------+-------+
+| . . . | . . . |
+| . . . | . . . |
+| . . . | . . . |
++-------+-------+
+
+Computer thinking of best move...
+Time elapsed: 18.50039 seconds
+Lookahead depth: 2 moves
+Nodes Visited: 76440
+White's move: 2/7 1L
+Placing w in cell [2][3], and rotating Block 1 Left
+Black (b)'s heuristic: -2
+White (w)'s heuristic: 2
++-------+-------+
+| . . b | . . . |
+| . . . | . . . |
+| . . . | w . . |
++-------+-------+
+| . . . | . . . |
+| . . . | . . . |
+| . . . | . . . |
++-------+-------+
+
+
+-----------------------------------------------------------------------
+
+Output with alpha-beta pruning:
+Reading setup from default.txt:
+
+Player Black: type=human, plays Black tokens
+Player White: type=computer, plays White tokens
+
++-------+-------+
+| . . . | . . . |
+| . . . | . . . |
+| . . . | . . . |
++-------+-------+
+| . . . | . . . |
+| . . . | . . . |
+| . . . | . . . |
++-------+-------+
+
+Input your move, Black (block/position block-to-rotate direction): 1/9 3L
+Nodes Visited: 0
+Black's move: 1/9 3L
+Placing b in cell [2][2], and rotating Block 3 Left
+Black (b)'s heuristic: 2
+White (w)'s heuristic: -2
++-------+-------+
+| . . . | . . . |
+| . . . | . . . |
+| . . b | . . . |
++-------+-------+
+| . . . | . . . |
+| . . . | . . . |
+| . . . | . . . |
++-------+-------+
+
+Computer thinking of best move...
+1/1 1R node pruned. 2/7 1L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/1 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/1 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/1 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/1 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/1 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/1 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/2 1L node pruned. 2/7 1R move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/2 1R node pruned. 2/7 1L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/2 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/2 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/2 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/2 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/2 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/2 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/3 1L node pruned. 2/7 1R move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/3 1R node pruned. 2/7 1L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/3 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/3 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/3 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/3 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/3 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/3 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+2/1 1L node pruned. 2/7 1R move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+2/1 1R node pruned. 2/7 1L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+2/1 2L node pruned. 2/9 2R move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+2/1 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+2/1 3L node pruned. 2/7 3L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+2/1 3R node pruned. 2/7 3L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+2/1 4L node pruned. 2/7 3L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+2/1 4R node pruned. 2/7 3L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+2/2 1L node pruned. 2/7 1R move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+2/2 1R node pruned. 2/7 1L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+2/2 2L node pruned. 2/9 2R move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+2/2 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+2/2 3L node pruned. 2/7 3L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+2/2 3R node pruned. 2/7 3L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+2/2 4L node pruned. 2/7 3L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+2/2 4R node pruned. 2/7 3L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+2/3 1L node pruned. 2/7 1R move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+2/3 1R node pruned. 2/7 1L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+2/3 2L node pruned. 2/7 3L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+2/3 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+2/3 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+2/3 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+2/3 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+2/3 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/4 1L node pruned. 2/7 1R move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/4 1R node pruned. 2/7 1L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/4 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/4 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/4 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/4 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/4 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/4 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -7.5, Beta = -7.5
+1/5 1R node pruned. 2/7 1L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/5 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/5 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/5 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/5 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/5 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/5 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/6 1L node pruned. 2/7 1R move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/6 1R node pruned. 2/7 1L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/6 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/6 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/6 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/6 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/6 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/6 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+2/4 1L node pruned. 2/7 1R move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+2/4 1R node pruned. 2/7 1L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+2/4 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -7.5
+2/4 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+2/4 3L node pruned. 1/5 2R move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+2/4 3R node pruned. 1/5 2R move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+2/4 4L node pruned. 1/5 2R move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+2/4 4R node pruned. 1/5 2R move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+2/5 1L node pruned. 2/7 1R move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+2/5 1R node pruned. 2/7 1L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+2/5 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+2/5 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+2/5 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+2/5 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+2/5 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+2/5 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+2/6 1L node pruned. 1/2 1R move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+2/6 1R node pruned. 1/4 1L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+2/6 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+2/6 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -7.5
+2/6 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -7.5
+2/6 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -7.5
+2/6 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -7.5
+2/6 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -7.5
+1/7 1L node pruned. 1/2 1R move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/7 1R node pruned. 1/5 1L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/7 2L node pruned. 2/2 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/7 2R node pruned. 2/2 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/7 3L node pruned. 2/2 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/7 3R node pruned. 2/2 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/7 4L node pruned. 2/2 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/7 4R node pruned. 2/2 2L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/8 1L node pruned. 3/3 1R move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/8 1R node pruned. 3/3 1L move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/8 2L node pruned. 3/1 3R move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/8 2R node pruned. 3/1 3R move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/8 3L node pruned. 3/1 3R move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/8 3R node pruned. 3/1 3R move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/8 4L node pruned. 3/1 3R move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+1/8 4R node pruned. 3/1 3R move for opponent has beta < alpha. Alpha = -6.5, Beta = -6.5
+2/7 1R node pruned. 3/3 1L move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+2/7 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+2/7 2R node pruned. 1/5 2R move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+2/7 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.75
+2/7 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.75
+2/7 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.75
+2/7 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.75
+2/8 1L node pruned. 1/2 1R move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+2/8 1R node pruned. 1/5 1L move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+2/8 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+2/8 2R node pruned. 2/2 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+2/8 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+2/8 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+2/8 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+2/8 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+2/9 1L node pruned. 1/2 1R move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+2/9 1R node pruned. 1/5 1L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+2/9 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+2/9 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.75
+2/9 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+2/9 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+2/9 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+2/9 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/1 1L node pruned. 1/2 1R move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+3/1 1R node pruned. 1/4 1L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+3/1 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/1 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/1 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/1 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+3/1 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/1 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/2 1L node pruned. 1/2 1R move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+3/2 1R node pruned. 1/4 1L move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+3/2 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+3/2 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+3/2 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/2 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+3/2 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+3/2 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+3/3 1L node pruned. 2/7 1R move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+3/3 1R node pruned. 2/7 1L move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+3/3 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+3/3 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+3/3 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/3 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/3 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+3/3 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+4/1 1L node pruned. 2/7 1R move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+4/1 1R node pruned. 2/7 1L move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+4/1 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+4/1 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+4/1 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+4/1 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+4/1 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+4/1 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+4/2 1L node pruned. 1/2 1R move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+4/2 1R node pruned. 1/4 1L move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+4/2 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/2 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/2 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/2 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/2 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/2 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+4/3 1L node pruned. 1/2 1R move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/3 1R node pruned. 1/4 1L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/3 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+4/3 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+4/3 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+4/3 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+4/3 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+4/3 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/4 1L node pruned. 1/2 1R move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+3/4 1R node pruned. 1/4 1L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+3/4 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/4 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/4 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/4 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+3/4 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/4 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/5 1L node pruned. 1/2 1R move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+3/5 1R node pruned. 1/4 1L move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+3/5 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+3/5 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+3/5 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+3/5 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+3/5 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+3/5 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+3/6 1L node pruned. 1/5 1R move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+3/6 1R node pruned. 1/4 1L move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+3/6 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+3/6 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+3/6 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+3/6 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/6 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+3/6 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/4 1L node pruned. 1/2 1R move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+4/4 1R node pruned. 1/4 1L move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+4/4 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/4 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/4 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/4 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/4 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+4/4 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/5 1L node pruned. 1/2 1R move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+4/5 1R node pruned. 1/4 1L move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+4/5 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/5 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/5 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/5 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/5 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/5 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/6 1L node pruned. 1/2 1R move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/6 1R node pruned. 1/4 1L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/6 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+4/6 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+4/6 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+4/6 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+4/6 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/6 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/7 1L node pruned. 1/2 1R move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+3/7 1R node pruned. 1/4 1L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+3/7 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/7 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/7 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/7 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/7 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/7 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/8 1L node pruned. 1/2 1R move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+3/8 1R node pruned. 1/4 1L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+3/8 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/8 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/8 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+3/8 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/8 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/8 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/9 1L node pruned. 1/5 1R move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+3/9 1R node pruned. 1/4 1L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+3/9 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/9 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/9 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+3/9 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/9 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+3/9 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+4/7 1L node pruned. 1/2 1R move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/7 1R node pruned. 1/4 1L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/7 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+4/7 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+4/7 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+4/7 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+4/7 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+4/7 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -5.5
+4/8 1L node pruned. 1/2 1R move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/8 1R node pruned. 1/4 1L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/8 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+4/8 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+4/8 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+4/8 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+4/8 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+4/8 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/9 1L node pruned. 1/2 1R move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/9 1R node pruned. 1/4 1L move for opponent has beta < alpha. Alpha = -5.5, Beta = -6.5
+4/9 2L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+4/9 2R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+4/9 3L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+4/9 3R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+4/9 4L node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+4/9 4R node pruned. 2/1 2L move for opponent has beta < alpha. Alpha = -5.5, Beta = -7.5
+Time elapsed: 3.36348 seconds
+Lookahead depth: 2 moves
+Nodes Visited: 12684
+White's move: 2/7 1L
+Placing w in cell [2][3], and rotating Block 1 Left
+Black (b)'s heuristic: -2
+White (w)'s heuristic: 2
++-------+-------+
+| . . b | . . . |
+| . . . | . . . |
+| . . . | w . . |
++-------+-------+
+| . . . | . . . |
+| . . . | . . . |
+| . . . | . . . |
++-------+-------+
+
+
