@@ -1,0 +1,34 @@
+The CS 380 Spring 2022 Pentago Tournament has finished.  
+
+Background:
+Students were to provide intelligent agents for programs that played Pentago
+(https://www.cs.drexel.edu/~jpopyack/Courses/AI/Sp22/assignments/HW6/index.html#Prog), a game in which two players place tokens on a 6x6 grid in an attempt to be the first to get five of their tokens aligned in consecutive positions, either horizontally, vertically, or diagonally.  The literal twist is that after positioning a token, the player rotates a 3x3 quadrant either clockwise or counter-clockwise.
+Tournament entries provided by CS380 students were heuristics that evaluated the grid, based on the state of the positions of players' tokens on it. The heuristics (along with supporting routines in some cases) were provided to an agent that used the Minimax algorithm to decide on moves, so that the same program and game logic was used for each contestant, with heuristics providing the only differentiator in move selection. Heuristics that did the best job of identifying promising (and perilous) grids were able to recommend superior moves.
+
+Opening Rounds:
+The opening rounds of the tournament were held Thursday, June 2.  Rounds were conducted within each class section (001 or 002), with pairings of two players.  Results of the opening rounds were used for seeding brackets for the actual tournament, so that winners and losers were distributed evenly among brackets for each section, with players paired in the opening round placed in different brackets for the tournament.  Thus, all players participated in Round 2.
+
+Round 2:
+Round 2 featured brackets of 6 or 7 players each, played in round-robin fashion: each played 2 games vs. every other player in the bracket, with each allotted the chance to play first.  Minimax used a maximum depth of 2, which ensured that most moves were made on the basis of the heuristics and not on a far-reaching lookahead.  There were 5 brackets for Section 001, and 4 brackets for Section 002, with 58 entrants in total.  (Some students were not included in the tournament, due either to submission too late for inclusion, or code issues that could not be resolved.)
+Round 2 saw 13 students advancing to the Semifinal Round.
+
+Semifinals:
+Semifinals were conducted within each section.  Two students advanced from each section as contestants in the Final Four:
+  Section 001:
+      Songheng Li, Mason Miller
+  Section 002:
+      Ryan Dao, Hana Tucker
+    
+Final Four:
+The Final Four gave some spirited competition, with each player again pitted against each of the other three, and each getting a chance to move first, for a total of 6 games each.  In fitting fashion, all players had some wins and losses.  Nevertheless, a clear winner emerged: Hana Tucker finished with a 5-1 record, and Mason Miller finished second with a 4-2 record and Silver Medal, losing only to Hana.  
+  Gold Medal: Hana Tucker
+  Silver Medal: Mason Miller
+  Bronze Medals: Ryan Dao, Songheng Li
+Congratulations to Hana and all our finalists and semifinalists!
+
+
+Opening round: https://www.cs.drexel.edu/~jpopyack/Courses/AI/Sp22/Tourney/2022/opener/rd652_transcripts.txt ,
+Round 2:           https://www.cs.drexel.edu/~jpopyack/Courses/AI/Sp22/Tourney/2022/round2/rd652_transcripts.txt ,
+Semifinals:        https://www.cs.drexel.edu/~jpopyack/Courses/AI/Sp22/Tourney/2022/semifinals/rd652_transcripts.txt ,
+Final Four:        https://www.cs.drexel.edu/~jpopyack/Courses/AI/Sp22/Tourney/2022/finals/rd652_transcripts.txt 
+  ... jp
