@@ -1,4 +1,0 @@
-
-Player Black: type=human, plays Black tokens
-Player White: type=computer, plays White tokens
-....................................	1/9 3L
